@@ -75,6 +75,8 @@ int CTable::getContent(int id) {
 	else return content[id];
 }
 
+
+//zad3
 void CTable::setContent(int id, int element) {
 	if (id >= (table_size)) return;
 	else content[id] = element;
@@ -88,8 +90,8 @@ void CTable::vPrint() {
 	for (int i = 0; i < table_size; i++)
 	{
 		std::cout << content[i] << std::endl;
-
 	}
+	std::cout << std::endl;
 }
 
 
@@ -99,6 +101,28 @@ void CTable::operator=(const CTable& pcOther)
 	content = pcOther.content;
 	table_size = pcOther.table_size;
 }//void CTable::operator=(CTable &pcOther)
+
+
+//zad4
+int* CTable::operator+(const CTable& pcOther)
+{
+	int new_table_size = table_size + pcOther.table_size;
+	int* new_content = new int[new_table_size];
+	for (int i = 0; i < table_size; i++)
+	{
+		new_content[i] = content[i];
+	}
+	for (int i = 0; i < pcOther.table_size; i++)
+	{
+		new_content[i + table_size] = pcOther.content[i];
+	}
+	return new_content;
+}
+
+
+
+
+
 
 
 /*
