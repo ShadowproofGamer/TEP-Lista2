@@ -104,25 +104,23 @@ void CTable::operator=(const CTable& pcOther)
 
 
 //zad4
-int* CTable::operator+(const CTable& pcOther)
+CTable CTable::operator+(const CTable& pcOther)
 {
-	int new_table_size = table_size + pcOther.table_size;
-	int* new_content = new int[new_table_size];
+	CTable new_table = CTable();
+	new_table.bSetNewSize(table_size + pcOther.table_size);
+
 	for (int i = 0; i < table_size; i++)
 	{
-		new_content[i] = content[i];
+		new_table.setContent(i, content[i]);
 	}
+
 	for (int i = 0; i < pcOther.table_size; i++)
 	{
-		new_content[i + table_size] = pcOther.content[i];
+		new_table.setContent(i + table_size, pcOther.content[i]);
 	}
-	return new_content;
+
+	return new_table;
 }
-
-
-
-
-
 
 
 /*

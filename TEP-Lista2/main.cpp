@@ -25,14 +25,19 @@ int main() {
 	c_tab_1.vPrint();
 
 
+
+
+
+
+
+
 	//zad 4
 	/*
-	* test:
-	int* con_table = c_tab_0 + c_tab_1;
-	for (int i = 0; i < 8; i++)
+	CTable con_table(c_tab_0 + c_tab_1);
+	for (int i = 0; i < con_table.getLength(); i++)
 	{
-		std::cout << con_table[i] << std::endl;
+		std::cout << con_table.getContent(i) << std::endl;
 	}
 	*/
-
+	return 0;
 }

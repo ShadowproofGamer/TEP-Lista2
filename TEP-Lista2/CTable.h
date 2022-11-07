@@ -26,7 +26,7 @@ public:
 	int getLength();
 	void operator=(const CTable& pcOther);
 	void vPrint();
-	int* operator+(const CTable& pcOther);
+	CTable operator+(const CTable& pcOther);
 
 };
 //void v_mod_tab(CTable* pcTab, int iNewSize);
